@@ -1,0 +1,31 @@
+<p>
+  My name is {{name}}, My phone is {{phoneNumber}}
+</p>
+
+<h2>Product Info</h2>
+<input type="text" name="name" [(ngModel)]="newTshirt.name">
+<h3>{{newTshirt.name | uppercase}}</h3>
+<h4>{{newTshirt.brand}}</h4>
+<p>MYR {{newTshirt.price | number:'1.2-2'}}</p>
+
+<h2>Recommended product</h2>
+<ul>
+<li *ngFor="let item of items" (click)="selectProduct(item)"> {{item.name}} - {{item.price}}</li>
+</ul>
+
+<div *ngIf="selectedProduct">
+<h3>Selected Product</h3>
+<h5>{{selectedProduct.name}}</h5>
+<h5>{{selectedProduct.brand}}</h5>
+<h5>{{selectedProduct.price}}</h5>
+
+</div>
+
+<div>
+<h3>Product from API</h3>
+<ul>
+<li *ngFor="let product of apiProducts">{{product.name}}</li>
+</ul>
+
+
+</div>

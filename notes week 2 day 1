@@ -1,0 +1,31 @@
+MOdule 3 Week 2
+
+------------------------------------------------------------------------
+INSTALL ANGULAR
+
+1. sudo npm install -g @angular/cli
+2. ng new my-dream-app
+3. route to angular > yes
+4. stylesheet > CSS
+5. cd my-dream-app
+6. ng serve
+7. run the url at your browser
+8. OPen the folder of my-dream-app in VS Code
+9. src > app > app.component.html
+
+
+
+________________________________________________________________________
+
+- in web, a component is a page or a sub page 
+- eg. footer component, customize a footer component, and apply it across all pages, so that you don't need
+to rewrite again
+- .ts format - typescript file
+- spec.ts is the testing file, normally we dont touch this file.
+- a class is a prototype of a blueprint of an object in object oriented programming
+- pipe will format the characters to the right side per left side
+- for h and p in html, can use {{ }}, for input, can only use [(ngMOdel)]
+- a service is the retrieval of data
+- import . is for current folder
+- import .. is next folder
+

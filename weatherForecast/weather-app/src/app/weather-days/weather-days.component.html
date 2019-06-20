@@ -1,0 +1,26 @@
+<section id="weather-list">
+    <div class="container"> 
+    <input class="form-control form-control-lg" type="text" placeholder="city" [(ngModel)]="city">
+    <button type="button" class="btn btn-lg btn-primary" (click)="btnPressed()">Check weather</button>
+    <h2>API Weather Forecast</h2>
+    <table class="table table-bordered table-striped">
+
+    <tr>
+        <th>Date</th>
+        <th>Weather</th>
+        <th>Temperature</th>
+    </tr>
+    <tr>
+        <td>20/07/2019</td>
+        <td>Hot</td>
+        <td>35</td>
+    </tr>
+    <tr *ngFor="let weather of weathers">
+        <td>{{weather.dt}}</td>
+        <td>{{weather.weather[0].main}}</td>
+            <td>{{weather.</td>
+    </tr>
+</table>
+
+</div>
+</section>
