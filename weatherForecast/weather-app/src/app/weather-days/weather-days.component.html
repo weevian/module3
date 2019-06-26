@@ -10,17 +10,35 @@
         <th>Weather</th>
         <th>Temperature</th>
     </tr>
-    <tr>
-        <td>20/07/2019</td>
-        <td>Hot</td>
-        <td>35</td>
-    </tr>
-    <tr *ngFor="let weather of weathers">
-        <td>{{weather.dt}}</td>
+
+    <tr *ngFor="let weather of weathers" (click)="weatherPressed(weather)">
+        <td>{{weather.dt * 1000 | date}}</td>
         <td>{{weather.weather[0].main}}</td>
-            <td>{{weather.</td>
+            <td>{{weather.temp.day - 273.15 | number:"0.2-2"}}</td>
     </tr>
+
 </table>
 
 </div>
 </section>
+
+<div *ngIf="selectedWeather">
+    <h4>Your selected weather:</h4>
+    <pre>
+        {{selectedWeather.weather[0].icon}}
+        Date: {{selectedWeather.dt * 1000 | date}}
+        Temperature (Day) :{{selectedWeather.temp.day}}
+        Temperature (Min) :{{selectedWeather.temp.min}}
+        Temperature (Max) :{{selectedWeather.temp.max}}
+        Temperature (Night) :{{selectedWeather.temp.night}}
+        Temperature (Eve) :{{selectedWeather.temp.eve}}
+        Temperature (Morning) :{{selectedWeather.temp.morn}}
+        Pressure :{{selectedWeather.pressure}}
+        Humidity :{{selectedWeather.humidity}}
+        Weather :{{selectedWeather.weather[0].main}}
+        Description :{{selectedWeather.weather[0].description}}
+    </pre>
+
+
+
+</div>

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../product'
-import { HttpService } from '../http.service'
+import { Product } from '../product';
+import { HttpService } from '../http.service';
+import { Router } from '@angular/router';
+import { ProductService } from '../product.service'
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -10,7 +13,6 @@ export class ProductsComponent implements OnInit {
   name = 'Wee Vian';
   phoneNumber = '012-3456789';
 
-  selectedProduct
   apiProducts
 
   newTshirt: Product ={
@@ -19,29 +21,14 @@ export class ProductsComponent implements OnInit {
     id:1,
     price: 199
   }
-
-  items : Product [] = [{
-    name: 'iPhone SE',
-    brand: 'Apple',
-    id:2,
-    price: 520.10
-  },{
-    name: 'Huawei P30',
-    brand: 'Huawei',
-    id:3,
-    price: 3999
-  },
-  {name: 'Smasung S20',
-    brand: 'Samsung',
-    id:4,
-    price: 2999
-  }];
+  items
 
 // 2 INJECT
 
-  constructor(public httpService:HttpService) { }
+  constructor(public httpService:HttpService, public router:Router, public productService:ProductService) { }
 
   ngOnInit() {
+this.items = this.productService.getProducts()
     this.httpService.getProduct().subscribe(resp=>{
       console.log(resp)
       this.apiProducts = resp["data"]
@@ -50,8 +37,9 @@ export class ProductsComponent implements OnInit {
   }
 
   selectProduct(item){
-    console.log(item)
-    this.selectedProduct = item
+//    console.log(item)
+  //  this.selectedProduct = item
+  this.router.navigate(["product/" + item.id])
   }
 
 

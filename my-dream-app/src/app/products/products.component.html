@@ -13,14 +13,6 @@
 <li *ngFor="let item of items" (click)="selectProduct(item)"> {{item.name}} - {{item.price}}</li>
 </ul>
 
-<div *ngIf="selectedProduct">
-<h3>Selected Product</h3>
-<h5>{{selectedProduct.name}}</h5>
-<h5>{{selectedProduct.brand}}</h5>
-<h5>{{selectedProduct.price}}</h5>
-
-</div>
-
 <div>
 <h3>Product from API</h3>
 <ul>

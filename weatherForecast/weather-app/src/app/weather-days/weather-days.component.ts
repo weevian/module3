@@ -10,17 +10,22 @@ export class WeatherDaysComponent implements OnInit {
 
 weathers
 city
+selectedWeather
 
   constructor(private httpService:HttpService) { }
 
   ngOnInit() {
   }
 btnPressed(){  
+  
   this.httpService.getWeathers(this.city).subscribe(resp=>{
     console.log(resp)
     this.weathers = resp["list"]
   },err=>{console.log(err)
   })
+}
+weatherPressed(weather){
+  this.selectedWeather = weather
 }
 
 }
