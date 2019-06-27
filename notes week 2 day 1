@@ -12,6 +12,7 @@ INSTALL ANGULAR
 7. run the url at your browser
 8. OPen the folder of my-dream-app in VS Code
 9. src > app > app.component.html
+10. run: "ng g component <name>" to add new component
 
 
 
@@ -28,4 +29,18 @@ to rewrite again
 - a service is the retrieval of data
 - import . is for current folder
 - import .. is next folder
+
+
+________________________________________________________________________
+
+1. Correct timestamp
+2. CLick on line, call out icon and details of the forecast
+3. Save button to save the details into local storage
+4. Another new tab: Current weather and Saved weather
+5. Geo loc
+
+
+
+
+
 
