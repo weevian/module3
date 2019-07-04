@@ -1,0 +1,30 @@
+1. look for candidates: 
+if take fresh grads, php n web are most commoon
+for grads who did final year project, if want to pass easily, ionic is easier.
+those who did android project, are usually the 10% - 15% top because its harder.
+it takes 3 weeks to teach ionic, 2 months to teach android
+
+2. for startups, to prove MVP, go hybrid, proof of concept, then get funds, and go native
+
+3. hybrid initial cost is higher, maintenance cost is higher because the language/ framework keeps on changing, and you need to keep on changing your codes. unlike native, native updates is about once a year, and the updates don't break the codes.
+
+4. startups usually start with hybrid, then they will switch to native.
+
+5. FOr iOS, anything that will cause user data to lost, like "Delete" button, it must be red. ROle: Destructive.
+ROle is not important for Android, important for iOS.
+
+6. FOr Android, after you have published your app on PLayStore, Google will screen your app. Might get removed by PlayStore.
+
+___________________________________________________________________________________
+
+IONIC
+
+1. in terminal
+ionic start <name of your app> blank
+cd <name of your app>
+ionic serve
+
+2. to add a new page
+ionic g page add
+
+

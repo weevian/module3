@@ -140,20 +140,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <tr *ngFor="let place of apiPlaces">
+                                <td>{{ place.name }}</td>
+                                <td>{{ place.description }}</td>
+                                <td>{{ place.country }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -193,6 +183,7 @@ aria-hidden="true"
                         <label for="exampleInputMall">Mall Name</label>
                         <input
                         type="text"
+                        [(ngModel)]=
                         class="form-control"
                         id="exampleInputMall"
                         placeholder="Enter mall name  "
@@ -233,7 +224,7 @@ aria-hidden="true"
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                     Close
                 </button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" (click)="postPlaces(mallInfo)">Save changes</button>
             </div>
         </div>
     </div>

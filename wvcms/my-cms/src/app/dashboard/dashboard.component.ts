@@ -7,11 +7,17 @@ import { HttpService } from '../http.service'
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
 
+export class DashboardComponent implements OnInit {
+apiPlaces
   constructor(public httpService:HttpService, public router:Router) { }
 
   ngOnInit() {
+this.httpService.getPlace().subscribe(resp=>{
+  console.log(resp);
+  this.apiPlaces = resp;
+});
+
   }
 
 }
