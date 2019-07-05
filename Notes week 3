@@ -27,4 +27,16 @@ ionic serve
 2. to add a new page
 ionic g page add
 
+3. to view in app view
+ionic serve --lab
+
+
+
+_____________________________________________________________________________
+
+git add .
+git commit -am "your desc"
+git push -u origin master
+
+
 
