@@ -30,13 +30,29 @@ ionic g page add
 3. to view in app view
 ionic serve --lab
 
-
+4. to add service page
+ionic g service <name>
 
 _____________________________________________________________________________
 
 git add .
 git commit -am "your desc"
 git push -u origin master
+
+_____________________________________________________________________________
+
+Create
+Read
+Update
+Delete
+
+3 types of storage:
+1. API
+2. Local
+3. Firebase
+
+
+
 
 
 
