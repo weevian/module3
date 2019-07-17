@@ -9,15 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class WeatherlistPage implements OnInit {
 results;
+city;
+
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {}
 
-  searchChanged(city) {
+  searchPressed() {
     // Call our service function which returns an Observable
-    this.weatherService.searchData(city).subscribe(resp => {
-      console.log(resp);
-      this.results = resp;
-    });
+    this.results = this.weatherService.searchCity(this.city).subscribe(resp => {
+      this.results = resp["list"]
+      //console.log(resp)
+    })
   }
+
 }

@@ -10,12 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 // 2. import HttpClientModule
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   // 3. import HttpClientModule here
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), FormsModule, HttpClientModule, AppRoutingModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
