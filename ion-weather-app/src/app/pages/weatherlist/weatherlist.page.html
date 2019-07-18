@@ -5,23 +5,19 @@
 </ion-header>
  
 <ion-searchbar [(ngModel)]="city"></ion-searchbar>
-<ion-button color="primary" (click)="searchPressed()">
-  Search </ion-button>
+<ion-button color="primary" (click)="searchPressed()">Search </ion-button>
       <ion-content>
         <h5>The weather at the selected city:</h5>
- <ion-list *ngFor="let result of results">
-    <ion-item>
-      <ion-avatar>
-        <img src="https://openweathermap.org/img/wn/{{result.weather[0].icon}}@2x.png">
-      </ion-avatar>
-      <ion-label>
-        <h2>{{result.dt * 1000 | date}}</h2>
-        <h2 style="color:dodgerblue">{{result.weather[0].main}}</h2>
-        <p style="color:dimgrey">{{result.temp.day - 273.15 | number:"0.2-2"}} D.Celcius</p>
-        <ion-button color="primary" (click)="checkWeather(results)">View Details</ion-button>
+ <ion-list  *ngFor="let result of results" routerLink="/weatherdetails">
+   <ion-item [routerLink]="['/weatherdetails',result.dt,place.name]">
+     <ion-thumbnail slot="start">
+       <img src="https://openweathermap.org/img/wn/{{result.weather[0].icon}}@2x.png"/>
+     </ion-thumbnail>      
+     <ion-label>
+       <h2>{{result.dt * 1000 | date}}</h2>
+       <h2 style="color:dodgerblue">{{result.weather[0].main}}</h2>
+       <p style="color:dimgrey">{{result.temp.day - 273.15 | number:"0.2-2"}} °C</p>
       </ion-label>
-              
-      <ion-icon slot="end" *ngIf="results.name == 'city'"></ion-icon>
     </ion-item>
  
   </ion-list>

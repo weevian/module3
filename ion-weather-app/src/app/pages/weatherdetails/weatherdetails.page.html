@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>weatherdetails works</ion-title>
-  </ion-toolbar>
+      <ion-toolbar>
+        <ion-title>Weather Details</ion-title>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-title></ion-title>
+        </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+    <ion-card *ngIf="weatherDetails">
+        <ion-card-header>
+            <ion-card-title>{{city}}</ion-card-title>
+          <ion-card-subtitle>{{weatherDetails.dt * 1000 | date}}</ion-card-subtitle>
+          <ion-card-subtitle>Weather: {{weatherDetails.weather[0].main}}</ion-card-subtitle>
+          <ion-card-subtitle>Humidity: {{weatherDetails.humidity}}</ion-card-subtitle>
+          <ion-card-subtitle>Pressure: {{weatherDetails.pressure}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+
+        </ion-card-content>
+      </ion-card>
+      
+
+
 
 </ion-content>

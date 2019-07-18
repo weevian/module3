@@ -8,20 +8,14 @@ import {ActivatedRoute } from '@angular/router';
   styleUrls: ['./weatherdetails.page.scss'],
 })
 export class WeatherdetailsPage implements OnInit {
-selectWeather;
-results;
 city;
+weatherDetails;
 
-  constructor(private activatedRoute: ActivatedRoute, private weatherService: WeatherService) { }
+  constructor(private activatedRoute: ActivatedRoute, public weatherService: WeatherService) { }
 
   ngOnInit() {
-  }
-
-//  checkWeather(results){
-  //  window.open(this.results)
-//    this.results = this.weatherService.searchCity(this.city).subscribe(resp => {
- //     this.results = resp["list"]
- // })
-
-//  }
+    let timestamp = this.activatedRoute.snapshot.paramMap.get('timestamp')
+  this.city = this.activatedRoute.snapshot.paramMap.get('city')
+// Get the information from the API
+this.weatherDetails = this.weatherService.getWeatherByTimeStamp(timestamp)}
 }
