@@ -19,7 +19,10 @@ weathers
 
   getWeatherByGeo(long,lat){
     return this.httpClient.get(
-      `${this.url}lat=${lat}&lon=${long}&appId=${this.apiKey}`)
+      `${this.url}lat=${lat}&lon=${long}&appId=${this.apiKey}`).pipe(
+        tap(resp=>{
+        this.weathers = resp["list"]
+        }))
   }
 
   searchCity(city) {

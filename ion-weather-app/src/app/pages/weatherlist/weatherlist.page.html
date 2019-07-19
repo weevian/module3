@@ -9,7 +9,7 @@
       <ion-content>
         <h5>The weather at the selected city:</h5>
  <ion-list  *ngFor="let result of results" routerLink="/weatherdetails">
-   <ion-item [routerLink]="['/weatherdetails',result.dt,place.name]">
+   <ion-item  (click)=openDetail(result)>
      <ion-thumbnail slot="start">
        <img src="https://openweathermap.org/img/wn/{{result.weather[0].icon}}@2x.png"/>
      </ion-thumbnail>      
