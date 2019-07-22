@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style type="text/css">
+.green{
+    background-color: green;
+}
+.red{
+    background-color:red;
+}
+.yellow{
+    background-color:yellow;
+}
+</style>
+    </head>
+<body>
+<h1>jQuery</h1>
+<button id="btn1">Click me</button>
+<p id="pclick">Ha ha click me!</p> 
+
+<h3>TRY IT: EXERCISE</h3>
+
+<div id="answer">
+    <div>
+        <p>This is a paragraph</p>
+        <p>This is another paragraph</p>
+        <p>This is yet another paragraph</p>
+    </div>
+    <p>This is another p but outside div</p>
+    <p>THis is another p but outside div</p>
+</div>
+
+<button id="answer1">Answer1</button>
+<button id="answer2">Answer2</button>
+<button id="answer3">Answer3</button>
+<input type="text" name="name" id="name_input" placeholder="Enter your name"> 
+<button id="greetingsbtn">Who are you?</button>
+<p id="greetings"></p>  
+
+-----------------------------------------------------------------
+<h1>Add your to do tasks:-</h1>
+<div id="todo">
+    <input type="text" name="todo" id="todo_input" placeholder="Add to do task"> 
+    <button id="addtodo">ADD</button>
+    <ul></ul>
+</div>
+ <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+// after the page is loaded, do/ show this
+$(document).ready(function(){
+    // alert("Hello! Welcome!")
+$('#btn1').click(function(){
+    alert('Hello Welcome!')
+})
+$('#pclick').click(function(){
+    alert('Happy profiting!!')
+})
+$('#greetingsbtn').click(function(){
+    $('#greetings').html('Hello ' + $('#name_input').val())
+})
+$('#answer1').click(function(){
+$('#answer div p').addClass('green')
+})
+$('#answer2').click(function(){
+    $('#answer div ~ p').addClass('yellow')
+})
+$('#answer3').click(function(){
+    $('#answer div p:first-child').addClass('red')
+})
+$('#addtodo').click(function(){
+    console.log('here!!')
+    $('#todo ul').append($('<li>').html($('#todo_input').val()))
+})
+})
+        </script>
+</body>
+</html>
