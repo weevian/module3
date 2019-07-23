@@ -43,7 +43,10 @@
 <div id="todo">
     <input type="text" name="todo" id="todo_input" placeholder="Add to do task"> 
     <button id="addtodo">ADD</button>
-    <ul></ul>
+    <ul id="taskClicked"></ul>
+    
+    <h2>Selected task:-</h2>
+    <p id="message"></p>
 </div>
  <script
         src="https://code.jquery.com/jquery-3.4.1.js"
@@ -73,8 +76,21 @@ $('#answer3').click(function(){
 })
 $('#addtodo').click(function(){
     console.log('here!!')
-    $('#todo ul').append($('<li>').html($('#todo_input').val()))
+    var liEl = $('<li>').html($('#todo_input').val())
+        liEl.click(function(){
+$('#message').html(liEl.text().substring(0,liEl.text().length-6))
+        })
+        var del = $('<button>').text('Delete')
+    $('#todo ul').append(liEl)
+    liEl.append(del)
+    del.click(function(){
+console.log('deleting task....')
+$(this).parent().remove()
 })
+})
+
+
+
 })
         </script>
 </body>

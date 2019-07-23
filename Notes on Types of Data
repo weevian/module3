@@ -1,0 +1,24 @@
+TYPES OF DATA:
+
+1. STRING, IDENTIFIED AS " " OR ' '
+2. NUMBER, IDENTIFIED AS 1 2 3 4 5
+3. BOOLEAN, IDENTIFIED AS TRUE FALSE
+4. ARRAY, IDENTIFIED AS [ ]
+5. OBJECT, IDENTIFIED AS { }
+
+TO CALL DATA FROM AN ARRAY:
+
+[0]
+[1]
+
+TO CALL DATA FROM AN OBJECT:
+
+Obj:
+   { 
+      name: "Erin",
+      age: "secret",
+      office: "peoplelogy"
+   }
+
+Obj.age
+Obj["age"]

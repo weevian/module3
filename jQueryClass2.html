@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Class Notes AJAX</title>
+</head>
+<body>
+    <h2>Your jodoh:-</h2>
+    <h3 id="photo"></h3>
+    <h3 id="name"></h3>
+    <h3 id="address"></h3>
+    <h3 id="phoneNumber"></h3>
+    <h3 id="email"></h3>
+    <h3 id="DOB"></h3>
+    <button id="jodohBtn">Get a jodoh</button>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+ $(document).ready(function(){
+     $('#jodohBtn').click(function(){
+         $.getJSON('https://www.randomuser.me/api', function(data,status){
+             console.log(data)
+             var user = data["results"][0]
+var image = user["picture"]["medium"]
+             $('#photo').prepend('<img id="photo" html="image">')
+
+             $('#name').text(user["name"]["title"]+ ' ' +user["name"]["first"] + ' ' + 
+             user["name"]["last"])
+
+             $('#address').text(user["location"]["street"] + ' ,' + user["location"]["city"] +
+              ' ,' + user["location"]["state"] + ' ,' + user["location"]["postcode"])
+
+             $('#phoneNumber').text(user["phone"])
+
+             $('#email').text(user["email"])
+
+             $('#DOB').text(user["dob"]["date"])
+             
+         })
+     })
+ })
+    </script>
+
+</body>
+</html>
+
+
