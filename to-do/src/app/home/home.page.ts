@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AddPage } from '../add/add.page';
 import { DataService } from '../data.service';
@@ -9,15 +9,16 @@ import { DataService } from '../data.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  todos = [
-]
+export class HomePage implements OnInit{
+  todos = [];
   constructor(
     public modalController: ModalController, 
     public dataService:DataService) {}
   
   ngOnInit(){
-    this.todos = this.dataService.getAllItems()
+    this.dataService.getAllItems().then(todos => {if(todos){
+      this.todos = todos;
+    }})
   }
 
 
@@ -30,8 +31,11 @@ modal.present();
 const {data} = await modal.onWillDismiss();
 console.log(data)
 // how to generate a unique id
-this.dataService.addItem(data)
+// let newId = this.dataService.todos.length + 1
+let newId = this.todos.length + 1
+data.newtodo.id = newId
 this.todos.push(data.newtodo)
+this.dataService.addItem(data.newtodo)
   }
 
 markDone(todo){
