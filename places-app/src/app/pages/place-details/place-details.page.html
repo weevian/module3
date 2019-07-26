@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+    <ion-title style="font-size: 30px; margin-top: 20px; margin-bottom: 10px; text-align: center">
+        All places 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card *ngIf="/placedetail/{{placedetail._id}}">
+        <ion-card-header>
+          <ion-card-subtitle>{{placedetail.name}}</ion-card-subtitle>
+          <ion-card-title>{{placedetail.description}}</ion-card-title>
+          <ion-card-title>{{placedetail.country}}</ion-card-title>
+        </ion-card-header>
+      
+      </ion-card>
+</ion-content>

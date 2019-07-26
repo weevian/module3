@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+    <ion-title style="font-size: 30px; margin-top: 20px; margin-bottom: 10px; text-align: center">
+        Discover places 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+<ion-list *ngFor="let place of places">
+<ion-label>
+  <ion-card-header>
+    <ion-card-title>{{place.name}}</ion-card-title>
+    <ion-card-subtitle style="color:dodgerblue">{{place.description}}</ion-card-subtitle>
+    <ion-card-subtitle style="color:dimgrey">{{place.country}}</ion-card-subtitle>
+    <ion-button color="primary" routerLink="/place-details/{{place._id}}">Details</ion-button>
+  </ion-card-header>
+</ion-label>
+</ion-list>
+</ion-content>

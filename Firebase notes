@@ -1,0 +1,7 @@
+FIREBASE
+
+1. Crashlytics - common crash problems - dates and time
+2. Test Lab - can run on device/ phone - not a free feature
+3. Cloud messaging - Push notifications
+4. Remote config - deploying features without releasing new app
+5. A/B Testing - Usually for marketing, can see how many conversions eg. marketing campaign, how many likes
