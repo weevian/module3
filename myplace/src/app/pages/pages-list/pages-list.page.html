@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Place List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let place of places">
+        <ion-thumbnail slot="start">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{place.name}}</h2>
+          <p>{{place.country}}</p>
+        </ion-label>
+        <ion-button fill="outline" slot="end" [routerLink]="
+        ['/place-detail',place._id]">View</ion-button>
+      </ion-item>
+</ion-content>  
